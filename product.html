@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background: #fdd0d4;
+      color: #7946b2;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      color: #a40e63;
+    }
+    .product {
+      border: 1px solid #a40e63;
+      padding: 10px;
+      text-align: center;
+    }
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background: #d4d54b;
+      color: #7946b2;
+      border: none;
+      cursor: pointer;
+      border-radius: 25px;
+    }
+    button:disabled {
+      background: #ff9b48;
+      color: #a40e63;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>Fetra<h2>
+      <a href="cart.html">Shopping Cart <span id="cart-count">0</span></a>
+    </div>
+  </div>
+  <div class="products">
+        <div class="product" id="Painting1">
+      <img src="anderground.jpg" alt="anderground 1" width="70%">
+      <h3>Whispers of the Crimson Cave </h3>
+      <p>Price: $1800</p>
+      <button onclick="addToCart('Whispers of the Crimson Cave', 1800, 'Painting1')">Add to Cart</button>
+    </div>
+    <div class="product" id="Painting2">
+      <img src="perfectlook.jpg" alt="Painting 2" width="70%">
+      <h3>Regal Harmony</h3>
+      <p>Price: $20000</p>
+      <button onclick="addToCart('Regal Harmony', 20000, 'Painting2')">Add to Cart</button>
+    </div>
+    <div class="product" id="Painting3">
+      <img src="stresswith hope.jpg" alt="Painting 3" width="70%">
+      <h3>Echo of Starlight</h3>
+      <p>Price: $15000</p>
+      <button onclick="addToCart('Echo of Starlight', 15000, 'Painting3')">Add to Cart</button>
+    </div>
+  </div>
+  <script>
+    const cart = [];
+    const cartCount = document.getElementById('cart-count');
+
+    function addToCart(name, price, id) {
+      cart.push({ name, price });
+      cartCount.textContent = cart.length;
+      document.querySelector(`#${id} button`).disabled = true;
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  </script>
+</body>
+</html>
