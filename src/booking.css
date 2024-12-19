@@ -1,0 +1,59 @@
+/* تصميم عام للصفحة */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* أقسام الصفحة */
+.search-doctor, .doctor-card, .booking-form {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* شريط البحث */
+.search-bar input {
+    padding: 8px;
+    width: 70%;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+}
+
+/* تصميم بطاقة الطبيب */
+.card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.book-appointment {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-appointment:hover {
+    background-color: #0056b3;
+}
+
+/* نموذج الحجز */
+.booking-form {
+    display: none; /* مخفي افتراضيًا */
+}
+
+.booking-form.active {
+    display: block; /* يظهر عند النقر */
+}

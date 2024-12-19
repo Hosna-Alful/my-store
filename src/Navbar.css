@@ -1,0 +1,36 @@
+/* تنسيق شريط التنقل */
+.navbar {
+    background-color: #4CAF50; /* اللون الخلفي */
+    overflow: hidden; /* لإخفاء أي محتوى يتجاوز */
+    position: fixed; /* جعل الشريط مثبت في أعلى الصفحة */
+    top: 0;
+    width: 100%;
+}
+
+/* تنسيق القائمة داخل الشريط */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* تنسيق كل عنصر في القائمة */
+.navbar li {
+    display: inline; /* عرض العناصر بشكل أفقي */
+}
+
+/* تنسيق الروابط */
+.navbar a {
+    display: inline-block;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* تغيير لون الرابط عند التمرير عليه */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
